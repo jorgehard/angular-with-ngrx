@@ -1,0 +1,8 @@
+.navbar {
+  padding:1rem;
+  &__admin {
+    display:flex;
+    justify-content: space-between;
+    background: white;
+  }
+}
