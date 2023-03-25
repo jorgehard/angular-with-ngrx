@@ -1,3 +1,20 @@
+.adminHome{
+  padding:0rem 2rem;
+  &__title{
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    width:100%;
+    border-bottom:1px solid #ccc;
+    margin-top:1rem;
+    padding-bottom:1rem;
+    color:#0D114F;
+    span{
+      margin-left:0.5rem;
+    }
+  }
+}
 table {
   width: 100%;
 }
