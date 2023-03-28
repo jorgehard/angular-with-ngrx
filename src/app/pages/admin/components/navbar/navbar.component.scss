@@ -3,6 +3,9 @@
   &__admin {
     display:flex;
     justify-content: space-between;
-    background: white;
+    background: transparent;
+    &-button{
+      padding:0rem 3rem !important;
+    }
   }
 }
