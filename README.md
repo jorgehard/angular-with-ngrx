@@ -1,6 +1,6 @@
 # Atlasgym!
 
-Hi! I'm Danilo, frontend developer to Atlasgym, this project is in construction, soon you guys, will could see the v1
+Hey! I'm Danilo, frontend developer at Atlasgym, this project is under construction, soon you will be able to see v1
 
 @jorgehard
 @dfealves
