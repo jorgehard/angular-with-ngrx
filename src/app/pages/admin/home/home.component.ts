@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { CourseStateInterface } from 'src/app/shared/models/courses.interface';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,6 @@ import { Component, Input } from '@angular/core';
 })
 export class HomeComponent{
 
-  @Input() courses$!: any;
+  @Input() courses$: CourseStateInterface | any;
   displayedColumns = ['name', 'category'];
 }

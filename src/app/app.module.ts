@@ -8,6 +8,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { CourseEffects } from './shared/effects/courses/courses.effects';
+import { reducers, metaReducers } from './shared/reducers';
 
 @NgModule({
   declarations: [
@@ -19,8 +21,18 @@ import { EffectsModule } from '@ngrx/effects';
     BrowserAnimationsModule,
     MatToolbarModule,
     HttpClientModule,
-    StoreModule.forRoot({}, {}),
-    EffectsModule.forRoot([]),
+    StoreModule.forRoot(reducers,{
+      metaReducers,
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true,
+        strictStateSerializability: true,
+        strictActionSerializability: true
+      }
+    }),
+    EffectsModule.forRoot([
+      CourseEffects
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]
