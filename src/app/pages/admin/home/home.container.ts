@@ -1,29 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { Course } from '../../../shared/models/course';
-import { CoursesService } from '../../../shared/services/courses.service';
+import { Store } from '@ngrx/store';
+import { State } from 'src/app/shared/reducers';
+import { selectorCourse } from 'src/app/shared/selectors/courses/courses.select';
+import { CourseRequest } from 'src/app/shared/actions/courses/courses.actions';
 
 @Component({
     selector: 'app-home-container',
     template: `<app-home
-    [courses$]="courses$"
+    [courses$]="courses$ | async"
     ></app-home>`
 })
 
 export class HomeContainerComponent implements OnInit {
-    courses$!: Course[];
+    public courses$ = this.store.select(selectorCourse);
 
     constructor(
-        private coursesService: CoursesService
+        private store: Store<State>
     ) { }
 
     ngOnInit(): void {
-        this.getCourses()
-    }
-
-    getCourses(): void {
-        this.coursesService.list().subscribe({
-            next: (r) => this.courses$ = r,
-            error: (e) => console.log('err', e)
-        })
+      this.store.dispatch(CourseRequest({ params: ''}))
     }
 }
